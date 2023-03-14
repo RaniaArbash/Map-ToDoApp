@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تطبيق المهام </string>
+    <string name="close_todoapp">إغلاق التطبيق</string>
+    <string name="add_new_task">إضافة مهمة جديدة</string>
+    <string name="toastMsg">المهمة المختارة هي </string>
+    <string name="addNewTask">ادخل مهمة جديدة</string>
+    <string name="isUrgent">هل هي مهمة عاجلة ؟</string>
+    <string name="order_confirmation">هل أنت متاكد؟</string>
+    <string name="add_todo_fragment">إضافة مهمة عن طريق fragment</string>
+
+
+</resources>

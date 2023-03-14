@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/addNewTodoID"
+    android:title="@string/add_new_task"/>
+    <item android:id="@+id/closeID"
+        android:title="@string/close_todoapp"/>
+    <item android:id="@+id/addDialogFragment" android:title="@string/add_todo_fragment"/>
+</menu>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MidtermProjectW23</string>
+    <string name="close_todoapp">Close ToDoApp</string>
+    <string name="add_new_task">Add New Task</string>
+    <string name="toastMsg">"the clicked task is  "</string>
+    <string name="addNewTask">Enter New Task</string>
+    <string name="isUrgent">Is Argent ?</string>
+    <string name="order_confirmation">Are you sure?</string>
+    <string name="add_todo_fragment">Add ToDo Fragment</string>
 </resources>
