@@ -4,5 +4,6 @@
     android:title="@string/add_new_task"/>
     <item android:id="@+id/closeID"
         android:title="@string/close_todoapp"/>
+    <item android:id="@+id/deleteAllToDos" android:title="Delete All Tasks"/>
     <item android:id="@+id/addDialogFragment" android:title="@string/add_todo_fragment"/>
 </menu>
