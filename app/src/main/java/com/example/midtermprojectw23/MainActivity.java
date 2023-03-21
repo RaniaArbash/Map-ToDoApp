@@ -39,7 +39,10 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         tasks = ((MyApp)getApplication()).taskArrayList;
+        tasks = FileStorageManager.readAllToDos(this);
+        ((MyApp)getApplication()).taskArrayList = tasks;
         recyclerList = findViewById(R.id.recycler_list);
         fragmentManager = getSupportFragmentManager();
 
@@ -62,6 +65,10 @@ public class MainActivity extends AppCompatActivity implements
                             Intent data = result.getData();
                             Task newToDo = data.getParcelableExtra("newTodo");
                             tasks.add(newToDo);
+                            FileStorageManager.writeNewTaskToTheFile(MainActivity.this, newToDo);
+                            tasks = FileStorageManager.readAllToDos(MainActivity.this);
+                            ((MyApp)getApplication()).taskArrayList = tasks;
+                            adapter.taskArrayList = tasks;
                             adapter.notifyDataSetChanged();
                         }
                     }
@@ -94,6 +101,15 @@ public class MainActivity extends AppCompatActivity implements
             break;
 
             }
+            case R.id.deleteAllToDos:{
+                FileStorageManager.deleteAllTodos(this);
+                tasks = FileStorageManager.readAllToDos(MainActivity.this);
+                ((MyApp)getApplication()).taskArrayList = tasks;
+                adapter.taskArrayList = tasks;
+                adapter.notifyDataSetChanged();
+
+                break;
+            }
             case R.id.closeID:{
                 finish();
                 break;
@@ -111,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void addingNewTaskListener(Task todo) {
         tasks.add(todo);
+        FileStorageManager.writeNewTaskToTheFile(this, todo);
         adapter.notifyDataSetChanged();
     }
 }
